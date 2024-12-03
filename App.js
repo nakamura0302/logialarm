@@ -20,6 +20,15 @@ const Stack = createNativeStackNavigator();
 
 LogBox.ignoreAllLogs();
 
+// Handles the notification
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+    shouldPlaySound: true,
+    shouldSetBadge: false,
+  }),
+});
+
 const App = () => {
   const [firstScreen, setFirstScreen] = useState(null); // Start with null
   const [isLoading, setIsLoading] = useState(true); // Loading state
@@ -34,19 +43,6 @@ const App = () => {
         console.log(res);
       }).catch(error => {
         console.log('Create Alarm database failed: ', error);
-      });
-
-      // Handles the notification
-      Notifications.setNotificationHandler({
-        handleNotification: async () => ({
-          shouldShowAlert: true,
-          shouldPlaySound: true,
-          shouldSetBadge: false,
-        }),
-      });
-
-      const notificationListener = Notifications.addNotificationReceivedListener((notification) => {
-        console.log('wwwwwwwwwwwwwwwwwwwwwzzzzzzzzzzzzzzzzzzzzzzzzwwwwwwwwwwww', notification)
       });
 
       createNotificationChannel();
