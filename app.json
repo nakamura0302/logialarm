@@ -1,0 +1,89 @@
+{
+  "expo": {
+    "name": "logi-alarm",
+    "slug": "logi-alarm",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.agrocognitive.logialram"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "statusBar": {
+      "hidden": false,
+      "barStyle": "dark-content",
+      "backgroundColor": "#000000"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "13.4"
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#ffffff",
+          "defaultChannel": "default",
+          "icon": "./assets/icon.png",
+          "mode": "production",
+          "sounds": [
+            "./assets/sound/bell.wav", 
+            "./assets/sound/doorbell.wav",
+            "./assets/sound/harp.wav",
+            "./assets/sound/flute.wav",
+            "./assets/sound/guitar.wav",
+            "./assets/sound/message.mp3",
+            "./assets/sound/magic.wav",
+            "./assets/sound/bubble.wav",
+            "./assets/sound/basic.wav"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1205c818-12c5-4222-b8ee-9b56b70a1934"
+      }
+    },
+    "android": {
+      "permissions": [
+        "NOTIFICATION_POLICY_ACCESS",
+        "WAKE_LOCK",
+        "NOTIFICATIONS",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM",
+        "com.android.alarm.permission.SET_ALARM"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.agrocognitive.logialram"
+    }
+  }
+}
